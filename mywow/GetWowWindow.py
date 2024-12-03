@@ -14,6 +14,7 @@ class GetWowWindow:
         :param window_title: 窗口标题，用于匹配 WOW 的窗口。
         """
         self.window_title = window_title
+        self.set_wow_window()
         self.hwnd = None
 
     def find_wow_window(self):
