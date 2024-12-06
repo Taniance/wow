@@ -1,6 +1,4 @@
-# walksmoothfight.py
-
-from movement import Movement
+# walk.py
 from combat import Combat
 from targeting import Targeting
 from pynput.keyboard import Controller

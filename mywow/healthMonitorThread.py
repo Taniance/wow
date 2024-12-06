@@ -2,10 +2,10 @@ import threading
 import logging
 import time
 from PIL import ImageGrab
-from mywow.GetWowWindow import GetWowWindow
+from mywow.getWowWindow import getWowWindow
 
 
-class HealthMonitorThread(threading.Thread):
+class healthMonitorThread(threading.Thread):
     """
     用于监控游戏血量的线程类，支持实时获取血量。
     """
@@ -33,7 +33,7 @@ class HealthMonitorThread(threading.Thread):
         self.running = False
         self.blood = 0
         self.lock = threading.Lock()  # 线程安全锁
-        self.wow_manager = GetWowWindow(window_title=self.window_title)
+        self.wow_manager = getWowWindow(window_title=self.window_title)
 
     def run(self):
         """

@@ -6,6 +6,8 @@ import numpy as np
 from pynput.keyboard import Controller
 from paddleocr import PaddleOCR
 
+from mywow.screenOCR import screenOCR
+
 
 def find_image_in_region(region, small_image_path, threshold=0.8):
     """
@@ -57,12 +59,12 @@ def find_image_in_region(region, small_image_path, threshold=0.8):
 
 if __name__ == "__main__":
     keyboard = Controller()
-    recorder = ScreenRecorder()
-    # region_bag = (825, 817, 876, 844)
-    region_blood = (105, 79, 228, 91)
+    recorder = screenOCR()
+    region_bag = (825, 817, 876, 844)
+    # region_blood = (105, 79, 228, 91)
     current = 0
     while True:
-        text = recorder.recognize(region_blood)
+        text = recorder.recognize_digits(region_bag)
         if text:
             print(f"文本内容: {text}")
             try:

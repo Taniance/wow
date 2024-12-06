@@ -1,8 +1,15 @@
 import time
-from mywow.HealthMonitorThread import HealthMonitorThread
+
+import pyautogui
+
+from mywow.healthMonitorThread import healthMonitorThread
 
 if __name__ == '__main__':
-    health_monitor = HealthMonitorThread(
+    color = pyautogui.screenshot().getpixel((287, 67))
+    print(f"目标颜色检测 color = {color}")
+
+    """
+    health_monitor = healthMonitorThread(
         window_title="魔兽世界",
         interval=0.1
     )
@@ -20,3 +27,4 @@ if __name__ == '__main__':
         print("程序终止...")
         health_monitor.stop()
         health_monitor.join()  # 等待线程安全结束
+    """
